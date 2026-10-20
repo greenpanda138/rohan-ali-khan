@@ -8,6 +8,7 @@
 <meta property="og:title" content="Rohan Ali Khan — Brand Identity & Visual Designer">
 <meta property="og:description" content="Brand identities people remember. Selected work: MONTRA eyewear, Ember & Olive, Form / Fiction logofolio.">
 <meta property="og:type" content="website">
+<script>document.documentElement.className += " js";</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,500;1,6..96,700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
@@ -17,16 +18,17 @@
 <a class="skip" href="#work">Skip to work</a>
 
 <header class="nav">
-  <a class="wordmark" href="#top">Rohan Ali Khan</a>
-  <nav aria-label="Sections">
-    <a href="#work">Work</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
+  <a class="wordmark" href="index.html">Rohan Ali Khan</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <nav id="navlinks" aria-label="Sections">
+    <a href="work.html">Work</a>
+    <a href="about.html#services">Services</a>
+    <a href="about.html">About</a>
+    <a class="nav-cta" href="contact.html">Start a project</a>
   </nav>
-  <a class="nav-cta" href="#contact">Start a project</a>
 </header>
 
-<main id="top">
+<main>
   <section class="hero">
     <div class="hero-inner">
       <p class="hero-role">Brand Identity &amp; Visual Designer — Islamabad, Pakistan</p>
@@ -36,13 +38,14 @@
           <p class="hero-line">Brand identities people <em>remember</em>.</p>
           <p class="lede">I build distinctive visual identities and create memorable brand experiences — where strategy, aesthetics, and creative experimentation meet.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="#contact">Start a project</a>
-            <a class="text-link text-link-light" href="#work">See selected work</a>
+            <a class="btn btn-light" href="contact.html">Start a project</a>
+            <a class="text-link text-link-light" href="work.html">See selected work</a>
           </div>
         </div>
-        <figure class="hero-image">
-          <img src="assets/img/montra-hero.jpg" alt="MONTRA contemporary eyewear — cream acetate glasses on deep green, brand identity by Rohan Ali Khan" width="1000" height="1251" fetchpriority="high">
-        </figure>
+        <div class="stage">
+          <img class="poster" src="assets/img/form-cover.jpg" alt="Form / Fiction logofolio cover — a black ribbon sculpture" width="1536" height="1024" fetchpriority="high">
+          <span class="hint">Drag to turn</span>
+        </div>
       </div>
     </div>
   </section>
@@ -54,124 +57,70 @@
     </div>
   </div>
 
-  <section class="work" id="work">
-    <div class="section-head">
-      <h2>Selected work</h2>
-      <p>Three projects, chosen because each one had to work as a complete world — not just a logo.</p>
-    </div>
-
-    <article class="project">
-      <header class="project-head">
-        <h3>MONTRA</h3>
-        <p class="scope">Contemporary eyewear — brand identity &amp; campaign</p>
-        <p class="project-line">A deep-green, editorial identity for an eyewear label: wordmark, posters, product stories, and a campaign built around one idea — see different.</p>
-      </header>
-      <div class="row row-portraits">
-        <img src="assets/img/montra-hero.jpg" alt="MONTRA wordmark with cream acetate glasses on deep green" width="1000" height="1251" loading="lazy" decoding="async">
-        <img src="assets/img/montra-poster.jpg" alt="MONTRA campaign poster — model in clear frames beside a vertical wordmark" width="1100" height="1376" loading="lazy" decoding="async">
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Selected work</h2>
+        <p>Three projects, chosen because each one had to work as a complete world — not just a logo.</p>
       </div>
-      <div class="row">
+
+      <a class="teaser reveal" href="montra.html">
         <img src="assets/img/montra-editorial.jpg" alt="MONTRA editorial — designed to frame the face" width="1536" height="1024" loading="lazy" decoding="async">
-        <img src="assets/img/montra-look.jpg" alt="MONTRA new season poster — oversized type with green sunglasses" width="1536" height="1024" loading="lazy" decoding="async">
-      </div>
-      <div class="row">
-        <img src="assets/img/montra-see-different.jpg" alt="See Different MONTRA — collection poster with four frames" width="1536" height="1024" loading="lazy" decoding="async">
-        <img src="assets/img/montra-unwrap.jpg" alt="Unwrap the next gen of eyewear — MONTRA campaign with branded ribbon" width="1536" height="1024" loading="lazy" decoding="async">
-      </div>
-    </article>
+        <div>
+          <h3>MONTRA</h3>
+          <p class="scope">Contemporary eyewear — brand identity &amp; campaign</p>
+          <p>An editorial identity in deep green, built around one idea: see different.</p>
+          <p class="go">View project</p>
+        </div>
+      </a>
 
-    <article class="project project-dark">
-      <header class="project-head">
-        <h3>Ember &amp; Olive</h3>
-        <p class="scope">Mediterranean kitchen, Islamabad — complete brand identity</p>
-        <p class="project-line">A complete identity for a Mediterranean kitchen: logo system, typography, colour and pattern, packaging, menus, stationery, and social — rooted in warmth, from the table to takeaway.</p>
-      </header>
-      <div class="row row-full">
+      <a class="teaser reveal" href="ember-olive.html">
         <img src="assets/img/ember-intro.jpg" alt="Ember and Olive brand introduction — logo beside Mediterranean dishes" width="1600" height="900" loading="lazy" decoding="async">
-      </div>
-      <div class="row">
-        <img src="assets/img/ember-logo.jpg" alt="Ember and Olive logo system — a mark made for the table" width="1600" height="900" loading="lazy" decoding="async">
-        <img src="assets/img/ember-colour.jpg" alt="Ember and Olive colour and pattern — rooted in warmth" width="1600" height="900" loading="lazy" decoding="async">
-      </div>
-      <div class="row">
-        <img src="assets/img/ember-packaging.jpg" alt="Ember and Olive packaging — takeaway bag, food box and cup" width="1600" height="900" loading="lazy" decoding="async">
-        <img src="assets/img/ember-menu.jpg" alt="Ember and Olive menu design — a menu worth lingering over" width="1600" height="900" loading="lazy" decoding="async">
-      </div>
-      <div class="row row-full">
-        <img src="assets/img/ember-social.jpg" alt="Ember and Olive social posts and exterior signage" width="1600" height="900" loading="lazy" decoding="async">
-      </div>
-    </article>
+        <div>
+          <h3>Ember &amp; Olive</h3>
+          <p class="scope">Mediterranean kitchen — complete brand identity</p>
+          <p>Logo, type, colour, packaging, menus and social — rooted in warmth.</p>
+          <p class="go">View project</p>
+        </div>
+      </a>
 
-    <article class="project">
-      <header class="project-head">
-        <h3>Form / Fiction</h3>
-        <p class="scope">Logofolio — eight identity concepts</p>
-        <p class="project-line">Eight brands, eight distinct worlds. A self-directed logofolio exploring how one designer changes voice completely from brief to brief.</p>
-      </header>
-      <div class="row row-full">
-        <img src="assets/img/form-cover.jpg" alt="Form / Fiction logofolio cover — eight brands, eight distinct worlds" width="1536" height="1024" loading="lazy" decoding="async">
-      </div>
-      <div class="row row-full">
-        <img src="assets/img/form-index.jpg" alt="Form / Fiction identity index — Aurel, Monoform, Sora, Vesper, Nué, Orbital, Terro, Atelier 09" width="1536" height="1024" loading="lazy" decoding="async">
-      </div>
-      <div class="row">
-        <figure>
-          <img src="assets/img/form-aurel.jpg" alt="Aurel — luxury fashion identity in burgundy and cream" width="1400" height="933" loading="lazy" decoding="async">
-          <figcaption>Aurel — luxury fashion</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/form-nue.jpg" alt="Nué — skincare identity in soft lavender" width="1400" height="933" loading="lazy" decoding="async">
-          <figcaption>Nu&eacute; — skincare</figcaption>
-        </figure>
-      </div>
-      <div class="row">
-        <figure>
-          <img src="assets/img/form-vesper.jpg" alt="Vesper — cultural space identity in black and acid yellow" width="1400" height="933" loading="lazy" decoding="async">
-          <figcaption>Vesper — cultural space</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/form-monoform.jpg" alt="Monoform — architecture identity in cobalt blue" width="1400" height="933" loading="lazy" decoding="async">
-          <figcaption>Monoform — architecture</figcaption>
-        </figure>
-      </div>
-    </article>
-  </section>
-
-  <section class="services" id="services">
-    <div class="section-head">
-      <h2>What I do</h2>
-      <p>Six services, one standard: work that looks considered from across the room and correct up close.</p>
+      <a class="teaser reveal" href="form-fiction.html">
+        <img src="assets/img/form-index.jpg" alt="Form / Fiction identity index — eight logo concepts" width="1536" height="1024" loading="lazy" decoding="async">
+        <div>
+          <h3>Form / Fiction</h3>
+          <p class="scope">Logofolio — eight identity concepts</p>
+          <p>Eight brands, eight distinct worlds, one designer changing voice.</p>
+          <p class="go">View project</p>
+        </div>
+      </a>
     </div>
-    <dl class="service-list">
-      <div class="service-row"><dt>Brand Identity</dt><dd>Complete identities — logo, colour, type, and the rules that hold them together.</dd></div>
-      <div class="service-row"><dt>Logo Design</dt><dd>Marks built to stay clear at any size, on any surface.</dd></div>
-      <div class="service-row"><dt>Packaging</dt><dd>Boxes, bags, labels and wraps that carry the brand into people&rsquo;s hands.</dd></div>
-      <div class="service-row"><dt>Digital Design</dt><dd>Campaign and web visuals in the same voice as the identity.</dd></div>
-      <div class="service-row"><dt>Amazon Creative</dt><dd>A+ content and store visuals that present the product clearly.</dd></div>
-      <div class="service-row"><dt>Social Media</dt><dd>Feeds and stories designed as one system, not one-off posts.</dd></div>
-    </dl>
   </section>
 
-  <section class="about" id="about">
-    <div class="section-head">
-      <h2>About</h2>
+  <section>
+    <div class="wrap reveal">
+      <p class="about-copy">Great design is about more than looking good — it&rsquo;s about creating a visual language that people remember.</p>
+      <p style="margin-top:28px"><a class="text-link" href="about.html">More about Rohan</a></p>
     </div>
-    <p class="about-copy">I&rsquo;m Rohan Ali Khan, a graphic designer focused on building distinctive visual identities and creating memorable brand experiences. I believe great design is about more than looking good — it&rsquo;s about creating a visual language that people remember. Based in Islamabad, working with brands everywhere.</p>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Start a project.</h2>
-    <p>Tell me about your brand — what it is, who it&rsquo;s for, and where it needs to go.</p>
-    <div class="contact-actions">
-      <a class="btn" href="https://www.instagram.com/rohaan_alie/" target="_blank" rel="noopener">Message on Instagram</a>
-      <a class="text-link" href="https://www.behance.net/rohanalikhan2" target="_blank" rel="noopener">See more on Behance</a>
+  <section class="contact">
+    <div class="wrap reveal">
+      <h2>Start a project.</h2>
+      <p>Tell me about your brand — what it is, who it&rsquo;s for, and where it needs to go.</p>
+      <div class="contact-actions">
+        <a class="btn" href="contact.html">Start a project</a>
+        <a class="text-link" href="work.html">See the work first</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
   <p class="footer-name">Rohan Ali Khan</p>
-  <p class="footer-small">Brand Identity &amp; Visual Designer · Islamabad · &copy; 2026</p>
+  <p class="footer-small">Brand Identity &amp; Visual Designer · Islamabad · <a href="https://www.instagram.com/rohaan_alie/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.behance.net/rohanalikhan2" target="_blank" rel="noopener">Behance</a> · &copy; 2026</p>
 </footer>
+
+<script src="assets/js/main.js" defer></script>
+<script type="module" src="assets/js/three-form.js"></script>
 </body>
 </html>

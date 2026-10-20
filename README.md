@@ -8,4 +8,6 @@ Selected work:
 - **Ember & Olive** — Mediterranean kitchen, complete brand identity
 - **Form / Fiction** — logofolio of eight identity concepts
 
-Plain HTML and CSS. No build step, no JavaScript.
+Multi-page static site — plain HTML, CSS and JavaScript, no build step. The home page carries one interactive 3D moment (a twisted ribbon form, after the Form / Fiction cover sculpture) built with Three.js; it falls back to a static poster where WebGL or reduced-motion requires it.
+
+Pages: `index.html` (home), `work.html`, `montra.html`, `ember-olive.html`, `form-fiction.html`, `about.html`, `contact.html`.
