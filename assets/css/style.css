@@ -1,12 +1,16 @@
-/* Rohan Ali Khan — quiet gallery. Ivory ground, near-black ink, one deep green from his own work.
-   Type: Bodoni Moda (his headline face) + Manrope (his text face). Square corners throughout. */
+/* Rohan Ali Khan — quiet luxury. Warm ivory ground, deep-green darks taken from his own work.
+   Type: Bodoni Moda (his headline face) + Manrope (his text face). Square corners throughout.
+   One motion only: the brand marquee. Everything else is scale, space and tone. */
 :root {
   --paper: #faf7f1;
-  --paper-deep: #f0e9db;
+  --paper-deep: #efe8d8;
   --ink: #171410;
+  --dark: #0e1a13;
+  --dark-2: #14231a;
+  --cream: #f2ead9;
   --accent: #1d3b2a;
-  --measure: 1200px;
-  --margin: 24px;
+  --measure: 1240px;
+  --margin: 28px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,39 +27,38 @@ body {
 img { display: block; max-width: 100%; height: auto; background: var(--paper-deep); }
 figure { margin: 0; }
 a { color: inherit; }
-::selection { background: var(--accent); color: var(--paper); }
+::selection { background: var(--accent); color: var(--cream); }
 
 .skip {
   position: absolute; left: -999px; top: 0;
-  background: var(--ink); color: var(--paper);
+  background: var(--cream); color: var(--ink);
   padding: 12px 20px; z-index: 100; text-decoration: none;
 }
 .skip:focus { left: 12px; top: 12px; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.hero :focus-visible, .project-dark :focus-visible { outline-color: var(--cream); }
 
 /* ---------- type ---------- */
-h1, h2, h3 { font-family: "Bodoni Moda", Didot, serif; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
-h1 { font-size: clamp(2.8rem, 6.5vw, 5.2rem); line-height: 1.0; }
-h2 { font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.05; }
-h3 { font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.05; }
-.lede { font-size: clamp(1.08rem, 1.8vw, 1.3rem); line-height: 1.55; max-width: 34em; }
+h1, h2, h3 { font-family: "Bodoni Moda", Didot, serif; font-weight: 700; letter-spacing: -0.015em; text-wrap: balance; }
+h2 { font-size: clamp(2.7rem, 6vw, 4.6rem); line-height: 1.02; }
+h3 { font-size: clamp(2.8rem, 6.5vw, 5rem); line-height: 1.0; }
+.lede { font-size: clamp(1.1rem, 1.8vw, 1.32rem); line-height: 1.55; max-width: 34em; }
 p { max-width: 38em; }
 
-/* ---------- nav ---------- */
+/* ---------- nav (on dark) ---------- */
 .nav {
+  background: var(--dark); color: var(--cream);
   display: flex; align-items: center; gap: 32px;
-  padding: 20px var(--margin);
-  max-width: var(--measure); margin: 0 auto;
-  border-bottom: 2px solid var(--ink);
+  padding: 22px max(var(--margin), calc((100vw - var(--measure)) / 2));
 }
-.wordmark { font-family: "Bodoni Moda", Didot, serif; font-weight: 900; font-size: 1.4rem; text-decoration: none; }
-.nav nav { display: flex; gap: 24px; margin-left: auto; }
+.wordmark { font-family: "Bodoni Moda", Didot, serif; font-weight: 900; font-size: 1.45rem; text-decoration: none; }
+.nav nav { display: flex; gap: 26px; margin-left: auto; }
 .nav nav a { text-decoration: none; font-size: 1rem; font-weight: 600; }
 .nav nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .nav-cta {
-  background: var(--accent); color: var(--paper);
+  background: var(--cream); color: var(--dark);
   text-decoration: none; font-weight: 800;
-  padding: 10px 22px;
+  padding: 11px 24px;
   transition: transform 120ms var(--ease-out);
 }
 .nav-cta:active { transform: scale(0.97); }
@@ -63,89 +66,132 @@ p { max-width: 38em; }
 /* ---------- buttons / links ---------- */
 .btn {
   display: inline-block;
-  background: var(--accent); color: var(--paper);
-  font-weight: 800; font-size: 1.05rem; text-decoration: none;
-  padding: 15px 32px;
+  background: var(--accent); color: var(--cream);
+  font-weight: 800; font-size: 1.06rem; text-decoration: none;
+  padding: 16px 34px;
   transition: transform 120ms var(--ease-out);
 }
 .btn:active { transform: scale(0.97); }
+.btn-light { background: var(--cream); color: var(--dark); }
 .text-link { font-weight: 800; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
 .text-link:hover { background: var(--paper-deep); }
+.text-link-light:hover { background: var(--dark-2); }
 
-/* ---------- hero ---------- */
-.hero { padding: 80px var(--margin) 0; }
-.hero-inner {
-  max-width: var(--measure); margin: 0 auto;
-  display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: center;
+/* ---------- hero (dark, full-bleed) ---------- */
+.hero { background: var(--dark); color: var(--cream); padding: 72px var(--margin) 96px; }
+.hero-inner { max-width: var(--measure); margin: 0 auto; }
+.hero-role { font-weight: 600; font-size: 1.05rem; margin-bottom: 40px; }
+.hero-name {
+  font-weight: 900;
+  font-size: clamp(4.2rem, 13.5vw, 11.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
 }
-.hero-copy h1 { margin-bottom: 26px; }
-.hero-copy .lede { margin-bottom: 34px; }
+.hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: end; }
+.hero-line {
+  font-family: "Bodoni Moda", Didot, serif; font-weight: 700;
+  font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1.08;
+  margin-bottom: 24px; max-width: 12em;
+}
+.hero-line em { font-style: italic; font-weight: 500; }
+.hero-copy .lede { margin-bottom: 36px; }
 .hero-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.hero-image img { width: 100%; }
 
 /* the one orchestrated entrance */
-@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.hero-copy > *, .hero-image { animation: rise 280ms var(--ease-out) both; }
-.hero-copy > *:nth-child(2) { animation-delay: 70ms; }
-.hero-copy > *:nth-child(3) { animation-delay: 140ms; }
-.hero-image { animation-delay: 100ms; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero-role, .hero-name, .hero-copy > *, .hero-image { animation: rise 300ms var(--ease-out) both; }
+.hero-name { animation-delay: 60ms; }
+.hero-copy > *:nth-child(1) { animation-delay: 130ms; }
+.hero-copy > *:nth-child(2) { animation-delay: 190ms; }
+.hero-copy > *:nth-child(3) { animation-delay: 250ms; }
+.hero-image { animation-delay: 160ms; }
+
+/* ---------- marquee (the one memorable motion) ---------- */
+.marquee { border-bottom: 2px solid var(--ink); overflow: hidden; padding: 26px 0; }
+.marquee-track {
+  display: flex; width: max-content;
+  font-family: "Bodoni Moda", Didot, serif; font-weight: 700;
+  font-size: clamp(1.7rem, 3.4vw, 2.7rem); letter-spacing: 0.01em;
+  white-space: nowrap;
+  animation: marquee 46s linear infinite;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ---------- sections ---------- */
-section { padding: 150px var(--margin) 0; }
+section { padding: 170px var(--margin) 0; }
 section > .section-head, section > .project, section > .service-list, section > .about-copy { max-width: var(--measure); margin-left: auto; margin-right: auto; }
-.section-head { margin-bottom: 64px; }
-.section-head h2 { margin-bottom: 18px; }
-.section-head p { font-size: 1.12rem; }
+.section-head { margin-bottom: 70px; }
+.section-head h2 { margin-bottom: 20px; }
+.section-head p { font-size: 1.14rem; }
 
 /* ---------- projects ---------- */
-.project { padding: 72px 0 8px; border-top: 2px solid var(--ink); }
-.project-head { margin-bottom: 44px; max-width: 720px; }
-.project-head h3 { margin-bottom: 10px; }
-.scope { font-weight: 800; font-size: 1.02rem; margin-bottom: 12px; }
-.project-line { font-size: 1.08rem; }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 28px; }
+.project { padding: 84px 0 12px; border-top: 2px solid var(--ink); }
+.project-head { margin-bottom: 52px; max-width: 760px; }
+.project-head h3 { margin-bottom: 14px; }
+.scope { font-weight: 800; font-size: 1.04rem; margin-bottom: 14px; }
+.project-line { font-size: 1.1rem; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
 .row-full { grid-template-columns: 1fr; }
-.row-portraits { grid-template-columns: 1fr 1fr; }
 .row img { width: 100%; }
-figcaption { font-size: 0.98rem; font-weight: 600; padding-top: 10px; }
+figcaption { font-size: 1rem; font-weight: 600; padding-top: 12px; }
+
+.project-dark {
+  background: var(--dark); color: var(--cream);
+  border-top: none;
+  margin-left: calc(-1 * var(--margin)); margin-right: calc(-1 * var(--margin));
+  max-width: none;
+  padding: 96px var(--margin) 64px;
+}
+.project-dark > * { max-width: var(--measure); margin-left: auto; margin-right: auto; }
+.project-dark img { background: var(--dark-2); }
+
+@media (hover: hover) and (pointer: fine) {
+  .row img { transition: transform 220ms var(--ease-out); }
+  .row img:hover { transform: scale(1.015); }
+}
 
 /* ---------- services ---------- */
 .service-list { border-top: 2px solid var(--ink); }
 .service-row {
   display: grid; grid-template-columns: 1fr 1.6fr; gap: 6px 32px;
-  padding: 24px 0; border-bottom: 2px solid var(--ink); align-items: baseline;
+  padding: 28px 0; border-bottom: 2px solid var(--ink); align-items: baseline;
 }
-.service-row dt { font-family: "Bodoni Moda", Didot, serif; font-weight: 700; font-size: 1.45rem; }
-.service-row dd { font-size: 1.05rem; }
+.service-row dt { font-family: "Bodoni Moda", Didot, serif; font-weight: 700; font-size: 1.6rem; }
+.service-row dd { font-size: 1.06rem; }
 
 /* ---------- about ---------- */
-.about-copy { font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.45; max-width: 30em; }
+.about-copy { font-size: clamp(1.35rem, 2.7vw, 2rem); line-height: 1.45; max-width: 29em; }
 
 /* ---------- contact ---------- */
-.contact { text-align: center; padding-bottom: 150px; }
-.contact h2 { margin-bottom: 18px; }
-.contact p { margin: 0 auto 38px; font-size: 1.12rem; }
+.contact { text-align: center; padding-bottom: 170px; }
+.contact h2 { font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 22px; }
+.contact p { margin: 0 auto 42px; font-size: 1.14rem; }
 .contact-actions { display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; }
 
-/* ---------- footer ---------- */
-.footer { border-top: 2px solid var(--ink); padding: 60px var(--margin) 38px; }
+/* ---------- footer (dark bookend) ---------- */
+.footer { background: var(--dark); color: var(--cream); padding: 72px var(--margin) 42px; }
 .footer-name {
   font-family: "Bodoni Moda", Didot, serif; font-weight: 900;
-  letter-spacing: -0.01em; line-height: 0.95;
-  font-size: clamp(3rem, 12.5vw, 10.5rem);
-  max-width: var(--measure); margin: 0 auto 22px;
+  letter-spacing: -0.02em; line-height: 0.92;
+  font-size: clamp(3.4rem, 13vw, 11rem);
+  max-width: var(--measure); margin: 0 auto 26px;
 }
 .footer-small { max-width: var(--measure); margin: 0 auto; font-size: 1rem; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 860px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-image { max-width: 440px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; align-items: start; }
+  .hero-image { max-width: 420px; }
   .nav nav { display: none; }
   .row { grid-template-columns: 1fr; }
   .service-row { grid-template-columns: 1fr; }
-  section { padding-top: 104px; }
+  section { padding-top: 112px; }
+  .hero { padding-top: 52px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-copy > *, .hero-image { animation: none; }
+  .hero-role, .hero-name, .hero-copy > *, .hero-image { animation: none; }
+  .marquee-track { animation: none; }
 }
