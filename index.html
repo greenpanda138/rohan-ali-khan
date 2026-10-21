@@ -12,49 +12,89 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* Index hero rebuild — hero + header only. Overrides the shared stylesheet on this page;
+   every section below the hero keeps its existing styles and content untouched. */
+body { animation: none; }
+.nav { background: #0A0A0B; color: #F5F2EC; position: absolute; top: 0; left: 0; right: 0; z-index: 50; padding: 18px clamp(16px, 3vw, 48px); }
+.wordmark { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; }
+.nav nav a { font-size: 0.95rem; }
+.nav-cta { background: #FF4D00; color: #0A0A0B; margin-left: 28px; }
+.nav-cta:hover { background: #E64400; color: #0A0A0B; }
+.menu-btn { margin-left: 14px; }
+.hero { background: #0A0A0B; color: #F5F2EC; min-height: 100svh; display: flex; flex-direction: column; padding: 0; position: relative; overflow: hidden; }
+.hero-inner { max-width: none; width: 100%; margin: 0; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 108px clamp(16px, 3vw, 48px) 44px; position: relative; z-index: 2; }
+.hero-headline { font-family: "Archivo Black", "Arial Black", sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(3.5rem, 11vw, 10rem); line-height: 0.9; letter-spacing: -0.02em; color: #F5F2EC; margin: 0 0 30px; }
+.hero-line { display: block; white-space: nowrap; animation: hero-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-line:nth-child(2) { animation-delay: 75ms; }
+.hero-line:nth-child(3) { animation-delay: 150ms; }
+.hero-line em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 0; color: #FF4D00; }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.hero-lede { color: #F5F2EC; margin: 0 0 14px; max-width: 36em; }
+.hero-status { font-size: 0.95rem; font-weight: 600; color: #CFCAC0; margin: 0 0 30px; max-width: none; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.hero-cta { display: inline-block; background: #FF4D00; color: #0A0A0B; font-weight: 800; font-size: 1.05rem; text-decoration: none; padding: 16px 30px; min-height: 48px; }
+.hero-cta:hover { background: #E64400; }
+.hero-cta:focus-visible, .nav-cta:focus-visible { outline: 3px solid #F5F2EC; outline-offset: 3px; }
+.hero-portrait { position: absolute; right: clamp(0px, 2vw, 32px); bottom: 68px; height: min(78svh, 760px); width: auto; z-index: 1; animation: none; }
+.hero-portrait img { height: 100%; width: auto; max-width: none; background: none; filter: grayscale(1) contrast(1.05); animation: none; }
+.hero-portrait:hover img { filter: none; }
+.hero-marquee { border-top: 1px solid rgba(245, 242, 236, 0.18); border-bottom: none; padding: 16px 0 18px; position: relative; z-index: 2; background: #0A0A0B; }
+.hero-marquee .marquee-track { font-weight: 600; font-size: 0.92rem; letter-spacing: 0.12em; text-transform: uppercase; animation: hero-marquee 60s linear infinite; }
+@keyframes hero-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.hero-marquee .sep { color: #FF4D00; padding: 0 0.6em; }
+@media (max-width: 860px) {
+  .nav nav { margin-left: 0; }
+  .nav-cta { margin-left: auto; }
+  .hero-inner { padding-top: 96px; justify-content: flex-start; }
+  .hero-portrait { position: static; height: auto; width: min(420px, 88vw); margin: 32px auto 0; }
+  .hero-portrait img { height: auto; width: 100%; max-width: 100%; }
+}
+@media (max-width: 520px) {
+  .hero-headline { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+  .hero-cta { width: 100%; text-align: center; padding: 18px 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-line, .hero-marquee .marquee-track { animation: none; }
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#work">Skip to work</a>
 
 <header class="nav">
   <a class="wordmark" href="index.html">Rohan Ali Khan</a>
-  <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">Menu</button>
   <nav id="navlinks" aria-label="Sections">
     <a href="work.html">Work</a>
     <a href="about.html#services">Services</a>
     <a href="about.html">About</a>
-    <a class="nav-cta" href="contact.html">Start a project</a>
   </nav>
+  <a class="nav-cta" href="contact.html">Start a project</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">Menu</button>
 </header>
 
 <main>
   <section class="hero">
     <div class="hero-inner">
-      <p class="hero-role">Brand Identity &amp; Visual Designer — Islamabad, Pakistan</p>
-      <h1 class="hero-name">Rohan<br>Ali Khan</h1>
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="hero-line">Brand identities people <em>remember</em>.</p>
-          <p class="lede">I build distinctive visual identities and create memorable brand experiences — where strategy, aesthetics, and creative experimentation meet.</p>
-          <div class="hero-actions">
-            <a class="btn btn-light" href="contact.html">Start a project</a>
-            <a class="text-link text-link-light" href="work.html">See selected work</a>
-          </div>
-        </div>
-        <figure class="hero-portrait">
-          <img src="assets/img/rohan-portrait.png" alt="Rohan Ali Khan — brand identity and visual designer" width="854" height="1100" fetchpriority="high">
-        </figure>
+      <h1 class="hero-headline"><span class="hero-line">Brand</span><span class="hero-line">identities</span><span class="hero-line">people <em>remember.</em></span></h1>
+      <p class="lede hero-lede">I build distinctive visual identities and create memorable brand experiences — where strategy, aesthetics, and creative experimentation meet.</p>
+      <p class="hero-status">Available for new projects — Islamabad, working worldwide.</p>
+      <div class="hero-actions">
+        <a class="hero-cta" href="#contact">Start a project</a>
+      </div>
+    </div>
+    <figure class="hero-portrait">
+      <img src="assets/img/rohan-portrait.png" alt="Rohan Ali Khan — brand identity and visual designer" width="854" height="1100" fetchpriority="high">
+    </figure>
+    <div class="marquee hero-marquee" aria-label="Brands designed: MONTRA, Ember and Olive, Aurel, Nué, Vesper, Monoform, Sora, Orbital, Terro, Atelier 09">
+      <div class="marquee-track">
+        <span>MONTRA<span class="sep" aria-hidden="true">·</span>EMBER &amp; OLIVE<span class="sep" aria-hidden="true">·</span>AUREL<span class="sep" aria-hidden="true">·</span>NU&Eacute;<span class="sep" aria-hidden="true">·</span>VESPER<span class="sep" aria-hidden="true">·</span>MONOFORM<span class="sep" aria-hidden="true">·</span>SORA<span class="sep" aria-hidden="true">·</span>ORBITAL<span class="sep" aria-hidden="true">·</span>TERRO<span class="sep" aria-hidden="true">·</span>ATELIER 09<span class="sep" aria-hidden="true">·</span></span>
+        <span aria-hidden="true">MONTRA<span class="sep" aria-hidden="true">·</span>EMBER &amp; OLIVE<span class="sep" aria-hidden="true">·</span>AUREL<span class="sep" aria-hidden="true">·</span>NU&Eacute;<span class="sep" aria-hidden="true">·</span>VESPER<span class="sep" aria-hidden="true">·</span>MONOFORM<span class="sep" aria-hidden="true">·</span>SORA<span class="sep" aria-hidden="true">·</span>ORBITAL<span class="sep" aria-hidden="true">·</span>TERRO<span class="sep" aria-hidden="true">·</span>ATELIER 09<span class="sep" aria-hidden="true">·</span></span>
       </div>
     </div>
   </section>
-
-  <div class="marquee" aria-label="Brands designed: MONTRA, Ember and Olive, Aurel, Nué, Vesper, Monoform, Sora, Orbital, Terro, Atelier 09">
-    <div class="marquee-track">
-      <span>MONTRA&ensp;·&ensp;EMBER &amp; OLIVE&ensp;·&ensp;AUREL&ensp;·&ensp;NU&Eacute;&ensp;·&ensp;VESPER&ensp;·&ensp;MONOFORM&ensp;·&ensp;SORA&ensp;·&ensp;ORBITAL&ensp;·&ensp;TERRO&ensp;·&ensp;ATELIER 09&ensp;·&ensp;</span>
-      <span aria-hidden="true">MONTRA&ensp;·&ensp;EMBER &amp; OLIVE&ensp;·&ensp;AUREL&ensp;·&ensp;NU&Eacute;&ensp;·&ensp;VESPER&ensp;·&ensp;MONOFORM&ensp;·&ensp;SORA&ensp;·&ensp;ORBITAL&ensp;·&ensp;TERRO&ensp;·&ensp;ATELIER 09&ensp;·&ensp;</span>
-    </div>
-  </div>
 
   <section id="work">
     <div class="wrap">
@@ -102,7 +142,7 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="wrap reveal">
       <h2>Start a project.</h2>
       <p>Tell me about your brand — what it is, who it&rsquo;s for, and where it needs to go.</p>
